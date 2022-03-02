@@ -16,7 +16,7 @@ Javascript packages are referenced using local paths.
   - **db**: MySQL database storing website data.
 - External services
   - **Fleek or Pinata**: IPFS hosting services storing user-signed messages.
-  - **Blockchain RPC servers**: Public JSON-RPC endpoints (defined in [networks.json](./snapshot.js/src/networks.json))
+  - **Blockchain RPC servers**: Public JSON-RPC endpoints
 
 ## How to run
 
@@ -33,7 +33,7 @@ Javascript packages are referenced using local paths.
     You must use publicly accessible IPs or domains.
 3. Build images (everytime you change any conf)
     ```
-    docker-compose build
+    ./build.sh
     ```
 4. Start server
     ```
@@ -50,3 +50,22 @@ Javascript packages are referenced using local paths.
     ```
 7. Access webpage at http://localhost:7000
 
+## Fixes to improve snapshot
+
+- For testing purpose, bypass ENS (Ethereum Name Service) check by directly inserting space settings to MySQL.
+This is not a problem of Klaytn; as [snapshot requires](https://docs.snapshot.org/spaces/before-creating-your-space) "an ENS domain on Ethereum mainnet even if you want to use Ethereum testnet or any other networks (Binance Smart Chain, xDAI... etc)."
+
+- Allow snapshot-hub to take environment variable for scores server URL 
+
+## Changes for Klaytn
+
+- All changes: https://github.com/blukat29/snapshot-klaytn/compare/vanilla...master
+
+- Register Klaytn RPC endpoints to [networks.json](./snapshot.js/src/networks.json)
+
+- Deploy [multicall](https://github.com/makerdao/multicall/blob/master/src/Multicall.sol) contract as per [snapshot docs](https://docs.snapshot.org/networks)
+
+- Modify block explorer url from `/address/0xabcd..` to `/account/0xabcd..` for compatibility with https://scope.klaytn.com.
+
+- Restrict snapshot block (vote starting block) to be multiple of 128.
+  Because the voting power is calculated at the snapshot block, the block state must be available from RPC.
