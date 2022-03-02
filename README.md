@@ -1,6 +1,7 @@
 # snapshot-klaytn
 
 Copy of snapshot.org source by [snapshot-labs](https://github.com/snapshot-labs).
+Modified to support [Klaytn](https://github.com/klaytn/klaytn) network.
 
 Unlike original source, this repository contains all libraries in this monorepo.
 Javascript packages are referenced using local paths.
@@ -47,4 +48,5 @@ Javascript packages are referenced using local paths.
     ```
     docker-compose logs -f
     ```
+7. Access webpage at http://localhost:7000
 
