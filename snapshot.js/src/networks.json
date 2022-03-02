@@ -719,6 +719,20 @@
     "start": 15123138,
     "imageIPFS": "QmYqkn8pJUaV9KcEPYEvRPwgbfeozLEvcQ9aEwKNRUL3cR"
   },
+  "1001": {
+    "key": "1001",
+    "name": "Klaytn Baobab Testnet",
+    "shortName": "klaytn",
+    "chainId": 1001,
+    "network": "testnet",
+    "multicall": "0x28a2DB74396CbdEdcFFBE2e1553CF76a7f1E1f50",
+    "rpc": [
+      "https://public-node-api.klaytnapi.com/v1/baobab"
+    ],
+    "explorer": "https://baobab.scope.klaytn.com",
+    "start": 84473327,
+    "imageIPFS": ""
+  },
   "1088": {
     "key": "1088",
     "name": "Metis",
@@ -848,6 +862,20 @@
     "explorer": "https://bx.shyft.network",
     "start": 3673983,
     "imageIPFS": "QmUkFZC2ZmoYPTKf7AHdjwRPZoV2h1MCuHaGM4iu8SNFpi"
+  },
+  "8217": {
+    "key": "8217",
+    "name": "Klaytn Cypress Mainnet",
+    "shortName": "klaytn",
+    "chainId": 8217,
+    "network": "mainnet",
+    "multicall": "0x0545644c5D4e623c0a94e07C3011c82A9986f835",
+    "rpc": [
+      "https://public-node-api.klaytnapi.com/v1/cypress"
+    ],
+    "explorer": "https://scope.klaytn.com",
+    "start": 84332931,
+    "imageIPFS": ""
   },
   "10000": {
     "key": "10000",
