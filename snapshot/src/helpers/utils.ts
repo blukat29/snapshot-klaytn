@@ -112,6 +112,9 @@ export function getNumberWithOrdinal(n) {
 }
 
 export function explorerUrl(network, str: string, type = 'address'): string {
+  // scope.klaytn.com uses 'account' instead.
+  if ((network=='1001' || network=='8217') && type == 'address')
+    type = 'account';
   return `${networks[network].explorer}/${type}/${str}`;
 }
 
