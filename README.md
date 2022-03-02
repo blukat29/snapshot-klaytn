@@ -7,9 +7,15 @@ Javascript packages are referenced using local paths.
 
 ## Components
 
-- snapshot: Static web server
-- snapshot-hub: API server for data storage backed by MySQL and IPFS
-- snapshot-score: API server for on-chain data backed by JSON RPC
+- Software implemented in this repository
+  - **(web) [snapshot](./snapshot)**: Static web server (default port: 7000)
+  - **(hub) [snapshot-hub](./snapshot-hub)**: API server for data storage backed by MySQL and IPFS (default port: 7001)
+  - **(score) [snapshot-score](./snapshot-score)**: API server for on-chain data backed by JSON RPC (default port: 7002)
+- Off the shelf servers
+  - **db**: MySQL database storing website data.
+- External services
+  - **Fleek or Pinata**: IPFS hosting services storing user-signed messages.
+  - **Blockchain RPC servers**: Public JSON-RPC endpoints (defined in [networks.json](./snapshot.js/src/networks.json))
 
 ## How to run
 
