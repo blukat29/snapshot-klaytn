@@ -1,8 +1,25 @@
 version: "3.4"
 services:
+  hub:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.hub
+    ports:
+      - "7001:7001"
+    depends_on:
+      - db
+    volumes:
+      - "./conf/hub.env:/app/.env:ro"
+  db:
+    image: mariadb:10.5
+    environment:
+      - "MYSQL_ROOT_PASSWORD=mypassword"
+      - "MYSQL_DATABASE=snapshot"
   score:
     build:
       context: .
       dockerfile: docker/Dockerfile.score
     ports:
-      - "3000:3000"
+      - "7002:7002"
+    environment:
+      - "PORT=7002"

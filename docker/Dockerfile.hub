@@ -1,0 +1,8 @@
+FROM node:14
+
+WORKDIR /app
+COPY snapshot-hub .
+RUN npm install yarn
+RUN yarn
+
+CMD ["yarn", "start"]
