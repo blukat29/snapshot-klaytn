@@ -60,7 +60,8 @@ export async function verify(body): Promise<any> {
       jsonParse(proposal.strategies),
       proposal.network,
       [body.address],
-      proposal.snapshot
+      proposal.snapshot,
+      process.env.SNAPSHOT_SCORES_URL + '/api/scores',
     );
     const totalScore = scores
       .map((score: any) => Object.values(score).reduce((a, b: any) => a + b, 0))

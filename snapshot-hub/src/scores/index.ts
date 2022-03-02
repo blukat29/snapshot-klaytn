@@ -10,8 +10,9 @@ export async function getScores(
   network: string,
   addresses: string[],
   snapshot: number | string = 'latest',
-  scoreApiUrl = 'https://score.snapshot.org/api/scores'
+  scoreApiUrl?: string
 ) {
+  scoreApiUrl = scoreApiUrl || 'https://score.snapshot.org/api/scores';
   try {
     const params = {
       space,
@@ -61,7 +62,8 @@ export async function getProposalScores(proposalId) {
       proposal.strategies,
       proposal.network,
       voters,
-      parseInt(proposal.snapshot)
+      parseInt(proposal.snapshot),
+      process.env.SNAPSHOT_SCORES_URL + '/api/scores',
     );
 
     // Add vp to votes
