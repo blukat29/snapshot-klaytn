@@ -2,6 +2,8 @@ FROM node:14
 
 WORKDIR /app
 COPY snapshot-hub .
+COPY conf/hub.env .env
+RUN touch .env
 RUN npm install yarn
 RUN yarn
 

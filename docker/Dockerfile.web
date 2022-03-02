@@ -1,0 +1,15 @@
+FROM node:14-buster
+
+RUN apt-get update && apt-get install -y \
+        nginx \
+    && rm -rf /var/lib/apt/lists/*
+COPY conf/nginx.conf /etc/nginx/sites-enabled/default
+
+WORKDIR /app
+COPY snapshot .
+COPY conf/web.env .env
+RUN npm install yarn
+RUN yarn
+RUN yarn build
+
+CMD ["nginx", "-g", "daemon off;"]
