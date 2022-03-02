@@ -235,7 +235,8 @@ watchEffect(async () => {
   loadingSnapshot.value = true;
   if (props.space?.network) {
     blockNumber.value = await getBlockNumber(getProvider(props.space.network));
-    form.value.snapshot = blockNumber.value;
+    // Klaytn node usually stores state only every 128 blocks.
+    form.value.snapshot = blockNumber.value - (blockNumber.value % 128) + 128;
     loadingSnapshot.value = false;
   }
   if (props.space?.voting?.type) form.value.type = props.space.voting.type;
