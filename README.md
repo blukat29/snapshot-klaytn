@@ -61,11 +61,12 @@ This is not a problem of Klaytn; as [snapshot requires](https://docs.snapshot.or
 
 - All changes: https://github.com/blukat29/snapshot-klaytn/compare/vanilla...master
 
-- Register Klaytn RPC endpoints to [networks.json](./snapshot.js/src/networks.json)
-
 - Deploy [multicall](https://github.com/makerdao/multicall/blob/master/src/Multicall.sol) contract as per [snapshot docs](https://docs.snapshot.org/networks)
 
-- Modify block explorer url from `/address/0xabcd..` to `/account/0xabcd..` for compatibility with https://scope.klaytn.com.
+- Register Klaytn RPC endpoints to [networks.json](./snapshot.js/src/networks.json) ([commit](https://github.com/blukat29/snapshot-klaytn/commit/3ddebca136dfa704c95abd8eb869954088d31b54))
 
 - Restrict snapshot block (vote starting block) to be multiple of 128.
-  Because the voting power is calculated at the snapshot block, the block state must be available from RPC.
+  Because the voting power is calculated at the snapshot block, the block state must be available from RPC. ([commit](https://github.com/blukat29/snapshot-klaytn/commit/7982a8b8c07f28c6fefd7b35866d912e8c70409e))
+
+- Modify block explorer url from `/address/0xabcd..` to `/account/0xabcd..` for compatibility with https://scope.klaytn.com. ([commit](https://github.com/blukat29/snapshot-klaytn/commit/afcf17a9163dd23d1c24b0942fdb7521f6d023ba))
+
