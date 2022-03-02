@@ -1,8 +1,18 @@
 FROM node:16
 
+# Local package must have dist/ directory (https://stackoverflow.com/q/40528053)
+COPY snapshot.js /vendor/snapshot.js
+RUN cd /vendor/snapshot.js \
+ && yarn \
+ && yarn build
+COPY snapshot-strategies /vendor/snapshot-strategies
+RUN cd /vendor/snapshot-strategies \
+ && yarn \
+ && yarn build
+
 WORKDIR /app
 COPY snapshot-score .
-RUN npm install
-RUN npm run build
+RUN yarn \
+ && yarn build
 
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start"]

@@ -1,10 +1,14 @@
 FROM node:14
 
+# Local package must have dist/ directory (https://stackoverflow.com/q/40528053)
+COPY snapshot.js /vendor/snapshot.js
+RUN cd /vendor/snapshot.js \
+ && yarn \
+ && yarn build
+
 WORKDIR /app
 COPY snapshot-hub .
 COPY conf/hub.env .env
-RUN touch .env
-RUN npm install yarn
 RUN yarn
 
 CMD ["yarn", "start"]
