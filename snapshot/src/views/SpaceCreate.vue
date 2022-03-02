@@ -78,7 +78,8 @@ watch(
           web3Account.value,
           clone(props.space),
           '',
-          clone(validationParams)
+          clone(validationParams),
+          import.meta.env.VITE_SCORES_URL + '/api/scores'
         );
 
         passValidation.value = [isValid, validationName];

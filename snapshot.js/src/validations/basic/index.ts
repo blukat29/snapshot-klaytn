@@ -4,7 +4,8 @@ export default async function validate(
   author: string,
   space,
   proposal,
-  options
+  options,
+  scoreApiUrl?: string
 ): Promise<boolean> {
   const strategies = options.strategies || space.strategies;
   const onlyMembers = options.onlyMembers || space.filters?.onlyMembers;
@@ -20,7 +21,8 @@ export default async function validate(
       space.id || space.key,
       strategies,
       space.network,
-      [author]
+      [author],
+      scoreApiUrl
     );
     const totalScore: any = scores
       .map((score: any) => Object.values(score).reduce((a, b: any) => a + b, 0))
