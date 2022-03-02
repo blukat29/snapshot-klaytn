@@ -1,0 +1,8 @@
+version: "3.4"
+services:
+  score:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.score
+    ports:
+      - "3000:3000"
