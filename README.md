@@ -50,7 +50,7 @@ Javascript packages are referenced using local paths.
     ```
 7. Access webpage at http://localhost:7000
 
-## Fixes to improve snapshot
+## Fixes to run in dev environment
 
 - For testing purpose, bypass ENS (Ethereum Name Service) check by directly inserting space settings to MySQL.
 This is not a problem of Klaytn; as [snapshot requires](https://docs.snapshot.org/spaces/before-creating-your-space) "an ENS domain on Ethereum mainnet even if you want to use Ethereum testnet or any other networks (Binance Smart Chain, xDAI... etc)."
