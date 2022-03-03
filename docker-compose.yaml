@@ -1,12 +1,14 @@
 version: "3.4"
 services:
   web:
+    restart: always
     build:
       context: .
       dockerfile: docker/Dockerfile.web
     ports:
       - "7000:80"
   hub:
+    restart: always
     build:
       context: .
       dockerfile: docker/Dockerfile.hub
@@ -15,11 +17,13 @@ services:
     depends_on:
       - db
   db:
+    restart: always
     image: mariadb:10.5
     environment:
       - "MYSQL_ROOT_PASSWORD=mypassword"
       - "MYSQL_DATABASE=snapshot"
   score:
+    restart: always
     build:
       context: .
       dockerfile: docker/Dockerfile.score
