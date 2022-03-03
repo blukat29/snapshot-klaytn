@@ -42,6 +42,7 @@ export default async function validate(
       strategies,
       space.network,
       [author],
+      'latest',
       scoreApiUrl
     );
     const totalScore: any = scores

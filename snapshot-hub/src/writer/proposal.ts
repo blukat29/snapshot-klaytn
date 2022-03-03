@@ -60,7 +60,8 @@ export async function verify(body): Promise<any> {
       body.address,
       space,
       msg.payload,
-      validationParams
+      validationParams,
+      process.env.SNAPSHOT_SCORES_URL + '/api/scores',
     );
     if (!isValid) return Promise.reject('validation failed');
   } catch (e) {
