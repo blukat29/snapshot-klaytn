@@ -1,5 +1,5 @@
 {
-  "name": "cypress-kusdt.klaytn.com",
+  "name": "Klaytn Cypress (USDT)",
   "skin": "indexed",
   "about": "",
   "admins": [
@@ -9,7 +9,7 @@
   "github": "klaytn",
   "symbol": "KUSDT",
   "filters": {
-    "minScore": 0,
+    "minScore": 1,
     "onlyMembers": false
   },
   "members": [],

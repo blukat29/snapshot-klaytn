@@ -1,5 +1,5 @@
 {
-  "name": "cypress-klay.klaytn.com",
+  "name": "Klaytn Baobab",
   "skin": "indexed",
   "about": "",
   "admins": [
@@ -9,11 +9,11 @@
   "github": "klaytn",
   "symbol": "KLAY",
   "filters": {
-    "minScore": 0,
+    "minScore": 3,
     "onlyMembers": false
   },
   "members": [],
-  "network": "8217",
+  "network": "1001",
   "plugins": {},
   "twitter": "klaytn",
   "strategies": [

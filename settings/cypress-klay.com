@@ -1,5 +1,5 @@
 {
-  "name": "alpha-klay.klaytn.com",
+  "name": "Klaytn Cypress (KLAY)",
   "skin": "indexed",
   "about": "",
   "admins": [
@@ -9,11 +9,11 @@
   "github": "klaytn",
   "symbol": "KLAY",
   "filters": {
-    "minScore": 0,
+    "minScore": 3,
     "onlyMembers": false
   },
   "members": [],
-  "network": "1002",
+  "network": "8217",
   "plugins": {},
   "twitter": "klaytn",
   "strategies": [

@@ -1,5 +1,5 @@
 {
-  "name": "baobab-klay.klaytn.com",
+  "name": "Klaytn 1.8.0 Private",
   "skin": "indexed",
   "about": "",
   "admins": [
@@ -9,11 +9,11 @@
   "github": "klaytn",
   "symbol": "KLAY",
   "filters": {
-    "minScore": 0,
+    "minScore": 0.1,
     "onlyMembers": false
   },
   "members": [],
-  "network": "1001",
+  "network": "1002",
   "plugins": {},
   "twitter": "klaytn",
   "strategies": [
