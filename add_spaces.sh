@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for file in $(find settings -type f)
+for file in $(find settings -type f | sort)
 do
     name=$(basename $file)
     settings=$(cat $file | jq -c .)

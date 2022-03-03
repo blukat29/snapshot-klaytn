@@ -8,5 +8,4 @@ else
     disable_tty=""
 fi
 
-set -x
 docker-compose exec $disable_tty db mysql -u root --password=mypassword $extra_opts snapshot

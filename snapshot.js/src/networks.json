@@ -733,6 +733,20 @@
     "start": 84473327,
     "imageIPFS": ""
   },
+  "1002": {
+    "key": "1002",
+    "name": "Klaytn Alpha Testnet",
+    "shortName": "klaytn",
+    "chainId": 1002,
+    "network": "testnet",
+    "multicall": "0xad6a139099636c4f7d1149f41c97bec5af6e84a9",
+    "rpc": [
+      "http://3.34.31.114:8551"
+    ],
+    "explorer": "https://no-scope-for-alpha-testnet.com",
+    "start": 1268215,
+    "imageIPFS": ""
+  },
   "1088": {
     "key": "1088",
     "name": "Metis",
