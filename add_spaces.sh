@@ -20,8 +20,12 @@ add_space() {
 #    add_space $file
 #done
 
-add_space settings/baobab.klaytn.com
-add_space settings/alpha.klaytn.com
-add_space settings/cypress-klay.com
-add_space settings/cypress-usdt.com
+#add_space settings/baobab.klaytn.com
+#add_space settings/alpha.klaytn.com
+#add_space settings/cypress-klay.com
+#add_space settings/cypress-usdt.com
 
+for file in "$@"
+do
+    add_space "$file"
+done
