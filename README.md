@@ -39,7 +39,7 @@ Javascript packages are referenced using local paths.
     ```
     docker-compose up -d
     ```
-5. Setup database scheam (only once)
+5. Setup database schema (only once)
     ```
     sh init_schema.sh
     docker-compose restart
@@ -50,12 +50,22 @@ Javascript packages are referenced using local paths.
     ```
 7. Access webpage at http://localhost:7000
 
+8. Add spaces to database (Currently you cannot create Space in Web UI. See below) 
+    ```
+    ./add_spaces.sh
+    ```
+
+9. If spaces don't appear, restart the server.
+    ```
+    docker-compose restart
+    ```
+
 ## Fixes to run in dev environment
 
 - For testing purpose, bypass ENS (Ethereum Name Service) check by directly inserting space settings to MySQL.
-This is not a problem of Klaytn; as [snapshot requires](https://docs.snapshot.org/spaces/before-creating-your-space) "an ENS domain on Ethereum mainnet even if you want to use Ethereum testnet or any other networks (Binance Smart Chain, xDAI... etc)."
+[snapshot requires](https://docs.snapshot.org/spaces/before-creating-your-space) "an ENS domain on Ethereum mainnet even if you want to use Ethereum testnet or any other networks (Binance Smart Chain, xDAI... etc)."
 
-- Allow snapshot-hub to take environment variable for scores server URL 
+- Allow snapshot-hub to take environment variable for scores server URL
 
 ## Changes for Klaytn
 
@@ -69,4 +79,3 @@ This is not a problem of Klaytn; as [snapshot requires](https://docs.snapshot.or
   Because the voting power is calculated at the snapshot block, the block state must be available from RPC. ([commit](https://github.com/blukat29/snapshot-klaytn/commit/7982a8b8c07f28c6fefd7b35866d912e8c70409e))
 
 - Modify block explorer url from `/address/0xabcd..` to `/account/0xabcd..` for compatibility with https://scope.klaytn.com. ([commit](https://github.com/blukat29/snapshot-klaytn/commit/afcf17a9163dd23d1c24b0942fdb7521f6d023ba))
-
